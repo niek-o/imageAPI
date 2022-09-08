@@ -250,22 +250,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cat@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "cat@workspace:."
-  dependencies:
-    "@infinite-fansub/logger": ^2.1.0
-    "@types/express": ^4.17.13
-    "@types/node": ^18.7.16
-    axios: ^0.27.2
-    colours.js: ^3.1.2
-    dotenv: ^16.0.2
-    express: ^4.18.1
-    ts-node: ^10.9.1
-    typescript: ^4.8.2
-  languageName: unknown
-  linkType: soft
-
 "colours.js@npm:^3.1.2":
   version: 3.1.2
   resolution: "colours.js@npm:3.1.2"
@@ -353,13 +337,6 @@ __metadata:
   version: 4.0.2
   resolution: "diff@npm:4.0.2"
   checksum: f2c09b0ce4e6b301c221addd83bf3f454c0bc00caa3dd837cf6c127d6edf7223aa2bbe3b688feea110b7f262adbfc845b757c44c8a9f8c0c5b15d8fa9ce9d20d
-  languageName: node
-  linkType: hard
-
-"dotenv@npm:^16.0.2":
-  version: 16.0.2
-  resolution: "dotenv@npm:16.0.2"
-  checksum: ca8f9ca2d67929c7771069f4c31b4e46b9932621009e658e5afd655dde2d69b77642bf36dbc9e72bc170523dfd908a9ee41c26f034c1fdc605ace3b1b4b10faf
   languageName: node
   linkType: hard
 
@@ -535,6 +512,21 @@ __metadata:
   checksum: bd9f120f5a5b306f0bc0b9ae1edeb1577161503f5f8252a20f1a9e56ef8775c9959fd01c55f2d3a39d9a8abaf3e30c1abeb1895f367dcbbe0a8fd1c9ca01c4f6
   languageName: node
   linkType: hard
+
+"imageapi@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "imageapi@workspace:."
+  dependencies:
+    "@infinite-fansub/logger": ^2.1.0
+    "@types/express": ^4.17.13
+    "@types/node": ^18.7.16
+    axios: ^0.27.2
+    colours.js: ^3.1.2
+    express: ^4.18.1
+    ts-node: ^10.9.1
+    typescript: ^4.8.2
+  languageName: unknown
+  linkType: soft
 
 "inherits@npm:2.0.4":
   version: 2.0.4
