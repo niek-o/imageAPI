@@ -1,0 +1,27 @@
+{
+  "name": "imageapi",
+  "version": "1.0.0",
+  "description": "A simple self-hosted image API made using express",
+  "author": {
+    "name": "Niek"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.7.16",
+    "colours.js": "^3.1.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@infinite-fansub/logger": "^2.1.0",
+    "axios": "^0.27.2",
+    "express": "^4.18.1"
+  },
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "build-test": "tsc -noEmit"
+  },
+  "packageManager": "yarn@3.2.3"
+}
