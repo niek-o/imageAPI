@@ -54,19 +54,19 @@ Example file structure:
     ┣ 📁 .yarn                
     ┣ 📁 img     
     ┃    ┣ 📁 cat
-    ┃    ┃    ┗ 🖼 6b48f43f-aaed-40d7-a38b-9484d12e903d.png
+    ┃    ┃    ┗ 🐱 6b48f43f-aaed-40d7-a38b-9484d12e903d.png
     ┃    ┗ 📁 dog
     ┣ 📁 node_modules                    
     ┣ 📁 src
-    ┃    ┣ 🛠 config.json
+    ┃    ┣ 🔧 config.json
     ┃    ┗ 📄 index.ts
     ┣ 📄 .gitignore
     ┣ 📄 .yarnrc.yml
-    ┣ 📄 LICENSE.md
-    ┣ 📄 openAPI.yaml
+    ┣ 📋 LICENSE.md
+    ┣ 📋 openAPI.yaml
     ┣ 📄 package.json
-    ┣ 📄 README.md
-    ┣ 🛠 tsconfig.json
+    ┣ 📋 README.md
+    ┣ 🔧 tsconfig.json
     ┗ 🔒 yarn.lock
 ```
 
