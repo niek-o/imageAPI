@@ -3,6 +3,7 @@ import { existsSync, readdirSync, readFileSync } from "fs";
 import { writeFile }                             from "fs/promises";
 import { randomUUID }                            from "crypto";
 import { Color }                                 from "colours.js";
+import { PORT, IMAGES_PATH }                     from "./config.json";
 
 require("@infinite-fansub/logger");
 
@@ -23,13 +24,11 @@ logger.colors = {
 //#endregion
 
 const app  = express();
-const port = 3000;
+const port = PORT;
 app.use(express.json());
 
-const BASE_PATH = "img/";
-
 app.get("/:path", (req, res) => {
-	const img = getImage(BASE_PATH + req.params.path);
+	const img = getImage(IMAGES_PATH + req.params.path);
 	
 	if (img === 404) {
 		logger.error("File does not exist");
@@ -43,7 +42,7 @@ app.get("/:path", (req, res) => {
 
 app.post("/", async (req, res) => {
 	const { path, url } = req.body;
-	const folders       = readdirSync(BASE_PATH);
+	const folders       = readdirSync(IMAGES_PATH);
 	
 	if (!folders.includes(path)) return res.sendStatus(400);
 	if (!url.match(/\.(gif|jpg|jpeg|tiff|png)$/i)) return res.sendStatus(400);
@@ -88,5 +87,5 @@ function getFile(path: string) {
 function downloadFile(url: string, outputPath: string) {
 	fetch(url)
 		.then(x => x.arrayBuffer())
-		.then(x => writeFile(`${ BASE_PATH }${ outputPath }/${ randomUUID() }.png`, Buffer.from(x)));
+		.then(x => writeFile(`${ IMAGES_PATH }${ outputPath }/${ randomUUID() }.png`, Buffer.from(x)));
 }

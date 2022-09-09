@@ -1,0 +1,65 @@
+openapi: 3.0.3
+info:
+  title: ImageAPI
+  description: |-
+    Links:
+    - [The ImageAPI repository](https://github.com/niek-o/imageAPI)
+  contact:
+    email: frankenstein795@gmail.com
+  license:
+    name: MIT
+    url: https://github.com/niek-o/imageAPI/blob/main/LICENSE.md
+  version: 1.1.0
+externalDocs:
+  description: Repository
+  url: https://github.com/niek-o/imageAPI
+servers:
+  - url: http://localhost:3000
+tags:
+  - name: images
+    description: GET & POST images
+paths:
+  /:
+    post:
+      tags:
+        - images
+      summary: Upload a new image to folder
+      operationId: addImage
+      requestBody:
+        description: Create a new image in a folder
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                path:
+                  type: string
+                url:
+                  type: string
+              required:
+                - path
+                - url
+      responses:
+        '200':
+          description: Successful operation
+        '400':
+          description: Invalid URL or Folder
+  /{folder}:
+    get:
+      tags:
+        - images
+      summary: Gets an image from a folder in Base64 format
+      operationId: getImageFromFolder
+      parameters:
+        - name: folder
+          in: path
+          description: The folder you want the image to be from
+          required: true
+          explode: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+        '404':
+          description: Image does not exist
