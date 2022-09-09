@@ -2,11 +2,23 @@
 
 A simple self-hosted image API made using express
 
-## Usage
+## Index
 
-### OpenAPI spec
+- [OpenAPI spec](#openapi-spec)
+- [Installation](#installation)
+    - [Prerequisites](#prerequisites)
+    - [How to set up](#how-to-set-up)
+    - [Configuration](#configuration)
+- [Usage](#usage)
+    - [File Structure](#file-structure)
+    - [Posting new image](#posting-new-image)
+    - [Getting image from cat folder](#getting-image-from-cat-folder)
+
+## OpenAPI spec
 
 The openapi specification can be found [here](https://github.com/niek-o/imageAPI/blob/main/openAPI.yaml)
+
+## Installation
 
 ### Prerequisites
 
@@ -26,33 +38,37 @@ Inside ``src`` you will find ``config.json``. In here you can change the port an
 
 ````json
 {
-  "PORT": "3000",
+  "PORT": 3000,
   "IMAGES_PATH": "img/"
 }
 ````
+
+## Usage
 
 ### File structure
 
 Example file structure:
 
-    .
-    ├── .yarn                
-    ├── img     
-    │   ├── cat
-    │   │   └── 6b48f43f-aaed-40d7-a38b-9484d12e903d.png
-    │   └── dog
-    ├── node_modules                    
-    ├── src
-    │   ├── config.json
-    │   └── index.ts
-    ├── .gitignore
-    ├── .yarnrc.yml
-    ├── LICENSE.md
-    ├── openAPI.yaml
-    ├── package.json
-    ├── README.md
-    ├── tsconfig.json
-    └── yarn.lock
+```
+   📦 ImageAPI
+    ┣ 📁 .yarn                
+    ┣ 📁 img     
+    ┃    ┣ 📁 cat
+    ┃    ┃    ┗ 🖼 6b48f43f-aaed-40d7-a38b-9484d12e903d.png
+    ┃    ┗ 📁 dog
+    ┣ 📁 node_modules                    
+    ┣ 📁 src
+    ┃    ┣ 🛠 config.json
+    ┃    ┗ 📄 index.ts
+    ┣ 📄 .gitignore
+    ┣ 📄 .yarnrc.yml
+    ┣ 📄 LICENSE.md
+    ┣ 📄 openAPI.yaml
+    ┣ 📄 package.json
+    ┣ 📄 README.md
+    ┣ 🛠 tsconfig.json
+    ┗ 🔒 yarn.lock
+```
 
 ### Posting new image
 

@@ -1,7 +1,10 @@
 openapi: 3.0.3
+
 info:
   title: ImageAPI
   description: |-
+    A simple self-hosted image API made using express
+
     Links:
     - [The ImageAPI repository](https://github.com/niek-o/imageAPI)
   contact:
@@ -9,47 +12,39 @@ info:
   license:
     name: MIT
     url: https://github.com/niek-o/imageAPI/blob/main/LICENSE.md
-  version: 1.1.0
+  version: 1.1.1
+
 externalDocs:
   description: Repository
   url: https://github.com/niek-o/imageAPI
+
 servers:
   - url: http://localhost:3000
-tags:
-  - name: images
-    description: GET & POST images
+
 paths:
   /:
     post:
-      tags:
-        - images
       summary: Upload a new image to folder
       operationId: addImage
+
       requestBody:
         description: Create a new image in a folder
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                path:
-                  type: string
-                url:
-                  type: string
-              required:
-                - path
-                - url
+              $ref: "#/components/schemas/image"
+
       responses:
         '200':
           description: Successful operation
         '400':
           description: Invalid URL or Folder
+
   /{folder}:
     get:
-      tags:
-        - images
-      summary: Gets an image from a folder in Base64 format
+      summary: Get an image from a folder in a Base64 formatted string
       operationId: getImageFromFolder
+
       parameters:
         - name: folder
           in: path
@@ -58,8 +53,24 @@ paths:
           explode: true
           schema:
             type: string
+
       responses:
         '200':
           description: Successful operation
         '404':
           description: Image does not exist
+
+components:
+  schemas:
+    image:
+      type: object
+      properties:
+        path:
+          type: string
+          example: "cat"
+        url:
+          type: string
+          example: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/1200px-Cat_November_2010-1a.jpg"
+      required:
+        - path
+        - url

@@ -24,7 +24,6 @@ logger.colors = {
 //#endregion
 
 const app  = express();
-const port = PORT;
 app.use(express.json());
 
 app.get("/:path", (req, res) => {
@@ -54,8 +53,8 @@ app.post("/", async (req, res) => {
 	res.sendStatus(200);
 });
 
-app.listen(port, () => {
-	logger.log(`Listening on port ${ port }`);
+app.listen(PORT, () => {
+	logger.log(`Listening on port ${ PORT }`);
 });
 
 
